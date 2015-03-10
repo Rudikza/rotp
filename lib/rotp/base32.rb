@@ -1,7 +1,7 @@
 module ROTP
   class Base32
     class Base32Error < RuntimeError; end
-    CHARS = "abcdefghijklmnopqrstuvwxyz234567".each_char.to_a
+    CHARS = "abcdefghijklmnopqrstuvwxyz234567=".each_char.to_a
 
     class << self
       def decode(str)

@@ -42,6 +42,7 @@ RSpec.describe ROTP::Base32 do
         expect(ROTP::Base32.decode('234BCD').unpack('H*').first).to eq 'd6f8110c'
         expect(ROTP::Base32.decode('234BCDE').unpack('H*').first).to eq 'd6f8110c80'
         expect(ROTP::Base32.decode('234BCDEFG').unpack('H*').first).to eq 'd6f8110c8530'
+        expect(ROTP::Base32.decode('234BCDEFG==').unpack('H*').first).to eq 'd6f8110c8538'
         expect(ROTP::Base32.decode('234BCDEFG234BCDEFG').unpack('H*').first).to eq 'd6f8110c8536b7c0886429'
       end
     end
